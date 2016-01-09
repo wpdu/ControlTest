@@ -1,0 +1,58 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ControlTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="ControlTest.MainPage"
+    
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#EEE">
+            <ScrollViewer>
+                <StackPanel Padding="20">
+                    <StackPanel.Resources>
+                        <Style TargetType="HyperlinkButton">
+                            <Setter Property="Margin" Value="0,0,0,10"></Setter>
+                        </Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Margin" Value="0,10,0,0"></Setter>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock FontSize="20" Text="BasicControl"/>
+                    <HyperlinkButton Content="ComboBox" Tag="BaseControl.ComboBoxTest"  Click="HyperlinkButton_Click"/>
+                    <HyperlinkButton Content="FlipView" Tag="BaseControl.FlipViewTest"  Click="HyperlinkButton_Click"/>
+                    <HyperlinkButton Content="ScrollView" Tag="BaseControl.ScrollViewTest"  Click="HyperlinkButton_Click"/>
+
+                    <TextBlock FontSize="20" Text="Info"/>
+                    <HyperlinkButton Content="DeviceIfo" Tag="Info.DeviceInfo"  Click="HyperlinkButton_Click"/>
+
+                    <TextBlock FontSize="20" Text="StoryBoard"/>
+                    <HyperlinkButton Content="DoubleAnimation" Tag="SB.DoubleAnimationTest"  Click="HyperlinkButton_Click"/>
+
+                    <TextBlock FontSize="20" Text="Behavior"/>
+                    <HyperlinkButton Content="BehaviorTest" Tag="Behavior.BehaviorTest"  Click="HyperlinkButton_Click"/>
+
+                    <TextBlock FontSize="20" Text="Sensor"/>
+                    <HyperlinkButton Content="Camera" Tag="Sensor.Camera"  Click="HyperlinkButton_Click"/>
+
+                    <TextBlock FontSize="20" Text="Tool"/>
+                    <HyperlinkButton Content="DateTime / Length Tool" Tag="Tool.TimeTool"  Click="HyperlinkButton_Click"/>
+                    <HyperlinkButton Content="Image Tool" Tag="Tool.ImageTool"  Click="HyperlinkButton_Click"/>
+                    <HyperlinkButton Content="MediaPicker" Tag="Tool.MediaPicker"  Click="HyperlinkButton_Click"/>
+
+                </StackPanel>
+                
+            </ScrollViewer>
+        </Border>
+
+        <Frame x:Name="InnerFrame" Grid.Column="1"/>
+    </Grid>
+</Page>

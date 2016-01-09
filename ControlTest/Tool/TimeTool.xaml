@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="ControlTest.Tool.TimeTool"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ControlTest.Tool"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Resources>
+            <Style x:Key="tboxWithHeader" TargetType="TextBox">
+                <Setter Property="Height" Value="65"></Setter>
+                <Setter Property="Width" Value="200"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="151*"/>
+        </Grid.RowDefinitions>
+        <StackPanel >
+            <TextBox x:Name="tb" VerticalAlignment="Center" Height="50" IsReadOnly="True" BorderThickness="0"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <StackPanel >
+                <TextBlock Text="日期转化"></TextBlock>
+                <TextBox Header="Input Long Time" Width="200" Style="{StaticResource tboxWithHeader}" TextChanged="LongToDataTime"></TextBox>
+                <TextBox Header="Out Date" x:Name="tbox_LongTimeString" Margin="0,10" Style="{StaticResource tboxWithHeader}"></TextBox>
+                <TextBox Header="Out Interval Days" x:Name="tbox_Days" Margin="0,10" Style="{StaticResource tboxWithHeader}"></TextBox>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Header="输入字符，计算长度" Margin="0,10,0,0" Style="{StaticResource tboxWithHeader}" 
+                             TextWrapping="Wrap" Width="290" TextChanged="CountLengthChanged"></TextBox>
+                    <TextBlock x:Name="tb_Count" VerticalAlignment="Bottom" Text="0"></TextBlock>
+                </StackPanel>
+
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>

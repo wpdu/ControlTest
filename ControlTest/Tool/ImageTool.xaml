@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="ControlTest.Tool.ImageTool"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ControlTest.Tool"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin="10,-176,0,176">
+
+            <StackPanel Width="200" Name="root" HorizontalAlignment="Left">
+                <TextBlock Name="lblMsg" FontSize="14.667" Text="i am webabcd" />
+                <Slider Width="200" />
+                <Image Source="/Assets/Son.jpg" />
+            </StackPanel>
+
+            <Image x:Name="imgSrc" Source="ms-appx:///Image/0001.jpg" Width="150"></Image>
+
+            <Button Name="btnSaveImage" Content="将控件 root 中的内容保存为图片" Click="btnSaveImage_Click" Margin="0 10 0 0" />
+            <Image Name="image" Margin="0 10 0 0" Stretch="None" HorizontalAlignment="Left" />
+
+        </StackPanel>
+
+    </Grid>
+</Page>

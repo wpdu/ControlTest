@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="Common.Control.MyBgImage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Common.Control"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" x:Name="G1">
+                <Grid.Background>
+                    <ImageBrush  x:Name="BgImage1" AlignmentX="Center" Stretch="UniformToFill"></ImageBrush>
+                </Grid.Background>
+            </Grid>
+            <Grid Grid.Row="0" x:Name="G2">
+                <Grid.Background>
+                    <ImageBrush  x:Name="BgImage2" AlignmentX="Center" Stretch="UniformToFill"></ImageBrush>
+                </Grid.Background>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

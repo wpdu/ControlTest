@@ -1,0 +1,66 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ControlTest.BaseControl"
+    xmlns:behavior="using:ControlTest.Behavior"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    x:Class="ControlTest.BaseControl.FlipViewTest"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <!--<FlipView x:Name="flipView1" SelectionChanged="FlipView_SelectionChanged">
+            <Image Source="ms-appx:///Image/0000.jpg" />
+            <Image Source="ms-appx:///Image/0002.jpg" />
+            <Image Source="ms-appx:///Image/0003.jpg" />
+            <Image Source="ms-appx:///Image/0004.jpg" />
+            <Image Source="ms-appx:///Image/0005.jpg" />
+        </FlipView>-->
+
+        <!--<Viewbox ManipulationDelta="Image_ManipulationDelta" ManipulationStarted="Viewbox_ManipulationStarted">
+            <Image Source="ms-appx:///Image/0002.jpg" CacheMode="BitmapCache" RenderTransformOrigin="0.5 0.5" >
+                <Image.RenderTransform>
+                    <CompositeTransform ></CompositeTransform>
+                </Image.RenderTransform>
+                <Interactivity:Interaction.Behaviors>
+                    <behavior:ZoomBehavior></behavior:ZoomBehavior>
+                </Interactivity:Interaction.Behaviors>
+            </Image>
+        </Viewbox>-->
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <FlipView x:Name="fv" Grid.RowSpan="2" ItemsSource="{Binding}" SelectionChanged="FlipView_SelectionChanged">
+                <FlipView.ItemTemplate>
+                    <DataTemplate>
+                        <ScrollViewer x:Name="sv" HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Auto" 
+                                      VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto"
+                                      ZoomMode="Enabled" MinZoomFactor="0.2" MaxZoomFactor="2" Loaded="sv_Loaded">
+                            <Image x:Name="img" Source="{Binding Image}" >
+                                <Image.RenderTransform>
+                                    <CompositeTransform x:Name="imageTransform" />
+                                </Image.RenderTransform>
+                            </Image>
+                        </ScrollViewer>
+                    </DataTemplate>
+                </FlipView.ItemTemplate>
+            </FlipView>
+            <Border Grid.Row="0" Background="#6000">
+                <Grid>
+                    <Button HorizontalAlignment="Left" Margin="20,0" Background="Transparent">
+                        <SymbolIcon Symbol="Back" Foreground="White" />
+                    </Button>
+                    <Button HorizontalAlignment="Right" Margin="20,0" Background="Transparent" Click="btn_Delete">
+                        <SymbolIcon Symbol="Delete" Foreground="White"/>
+                    </Button>
+                </Grid>
+            </Border>
+
+        </Grid>
+    </Grid>
+</Page>

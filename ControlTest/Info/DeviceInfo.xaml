@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="ControlTest.Info.DeviceInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ControlTest.Info"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    
+    >
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Text="窗口:"></TextBlock>
+                <TextBlock x:Name="width"></TextBlock>
+                <TextBlock Text="/"></TextBlock>
+                <TextBlock x:Name="height"></TextBlock>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Text="屏幕:"></TextBlock>
+                <TextBlock x:Name="width1"></TextBlock>
+                <TextBlock Text="/"></TextBlock>
+                <TextBlock x:Name="height1"></TextBlock>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Text="缩放:"></TextBlock>
+                <TextBlock x:Name="scale"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
